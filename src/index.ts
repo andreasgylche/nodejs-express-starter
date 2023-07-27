@@ -1,5 +1,6 @@
 import express from 'express'
 import cors from 'cors'
+import helmet from 'helmet'
 import errorhandler from 'errorhandler'
 import morgan from 'morgan'
 import dotenv from 'dotenv'
@@ -11,6 +12,7 @@ dotenv.config()
 const app = express()
 
 app.use(express.json())
+app.use(helmet())
 app.use(cors())
 app.use(morgan('dev'))
 
